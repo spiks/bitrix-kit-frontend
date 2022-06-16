@@ -1,18 +1,13 @@
-extends /template/pug/layouts/main.pug
+extends /template/layouts/main.pug
 
-include /template/pug/meta/header.pug
-include /template/pug/meta/footer.pug
-
-include /utils/pug/img.pug
-
-include /components/newsListExample/template.pug
+include /template/meta/header.pug
+include /template/meta/footer.pug
 
 block title
   title Главная
 
 block body
-  +HeaderComponent()
-
-  +NewsListComponent()
-
-  +FooterComponent()
+  div(style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;")
+    h1(style="margin: 0 0 40px") Хелоу все работает
+    div(style="width: 300px; height: 300px;")
+      +img({ path: '/temp.jpg' })

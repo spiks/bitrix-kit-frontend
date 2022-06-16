@@ -16,9 +16,12 @@
         "map": [
           ["@", "./src"],
           ["@template", "./src/template"],
-          ["@components", "./src/components"],
-          ["@includes", "./src/includes"],
-          ["@utils", "./src/utils"]
+          ["@components", "./src/template/components"],
+          ["@styles", "./src/template/styles"],
+          ["@modules", "./src/template/modules"],
+          ["@styleMixins", "./src/template/mixins/css"],
+          ["@utils", "./src/template/utils"],
+          ["@api", "./src/template/api"]
         ]
       }
     }

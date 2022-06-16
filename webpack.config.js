@@ -12,10 +12,7 @@ const PATHS = {
   assets: 'assets',
 }
 
-const BUILD_COMPONENTS_STATE = 'default'; 
-const BUILD_INCLUDES_STATE = 'default'; 
 const PAGES_DIR = path.join(__dirname, 'src/pages');
-const COMPONENTS_DIR = path.join(__dirname, 'src/components');
 
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -38,49 +35,7 @@ const initMultipleHtmlPlugin = () => {
     });
   });
 
-  console.log('Pages list:');
-  console.log(`${JSON.stringify(pagesMap)}`);
-
   return pluginInstances;
-};
-
-const getComponentsEntryPoints = () => {
-  if (BUILD_COMPONENTS_STATE === 'default') return {};
-
-  const componentsDirs = fs.readdirSync(COMPONENTS_DIR);
-
-  const entryPointsMap = {};
-
-  componentsDirs.forEach((componentDir) => {
-    const [dirName] = componentDir.split('.');
-
-    const scriptEntryPointName = `${dirName}.scripts`;
-    const scriptEntryPointFilePath = path.join(__dirname, `src/components/${dirName}/script.js`);
-    
-    const styleEntryPointName = `${dirName}.styles`;
-    const styleEntryPointFilePath = path.join(__dirname, `src/components/${dirName}/style.js`);
-
-    if (fs.existsSync(scriptEntryPointFilePath) && !entryPointsMap[scriptEntryPointName]) {
-      entryPointsMap[scriptEntryPointName] = scriptEntryPointFilePath;
-    }
-
-    if (fs.existsSync(styleEntryPointFilePath) && !entryPointsMap[styleEntryPointFilePath]) {
-      entryPointsMap[styleEntryPointName] = styleEntryPointFilePath;
-    }
-  });
-
-  console.log('Components list:');
-  console.log(`${JSON.stringify(entryPointsMap)}`);
-  return entryPointsMap;
-}
-
-const getIncludesEntryPoints = () => {
-  if (BUILD_INCLUDES_STATE === 'default') return {};
-
-  return {
-    'includes.styles': `${PATHS.src}/includes/includes_styles.js`,
-    'includes.scripts': `${PATHS.src}/includes/includes_modules.js`,
-  };
 };
 
 const config = {
@@ -88,8 +43,6 @@ const config = {
   entry: {
     'template.styles': `${PATHS.src}/styles.js`,
     'template.scripts': `${PATHS.src}/scripts.js`,
-    ...getIncludesEntryPoints(),
-    ...getComponentsEntryPoints(),
   },
   output: {
     filename: `${PATHS.assets}/js/[name]/[name].js`,
@@ -108,9 +61,12 @@ const config = {
     alias: {
       '@': PATHS.src,
       '@template': `${PATHS.src}/template`,
-      '@includes': `${PATHS.src}/includes`,
-      '@components': `${PATHS.src}/components`,
-      '@utils': `${PATHS.src}/utils`,
+      '@styles': `${PATHS.src}/template/styles`,
+      '@modules': `${PATHS.src}/template/modules`,
+      '@styleMixins': `${PATHS.src}/template/mixins/css`,
+      '@utils': `${PATHS.src}/template/utils`,
+      '@apiFront': `${PATHS.src}/template/api-front`,
+      '@components': `${PATHS.src}/template/components`,
     }
   },
   plugins: [    

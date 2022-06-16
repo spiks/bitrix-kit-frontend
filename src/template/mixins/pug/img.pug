@@ -1,0 +1,51 @@
+//- options.defaultPic = {
+//-   path: '',
+//-   alt: '',
+//- }
+//- options.pics Список картинок
+//- options.pics = [
+//-   {
+//-     defaultPath: '',
+//-     defaultType: '',
+//-     webpPath: '',
+//-     media: ''
+//-   }
+//- ]
+//- options.wrapperClasses = ''
+//- options.elementClasses = ''
+
+mixin imgWithSources(options= {})
+  -
+    var mediaDirPath = '../assets/media';
+    var defaultPicPath = `${mediaDirPath}${options.defaultPic.path}`;
+    var wrapperClasses = options.wrapperClasses || ''; 
+    var elementClasses = options.elementClasses || ''; 
+
+  picture(class= wrapperClasses)
+    each pic in options.pics
+      -
+        var defaultPath = `${mediaDirPath}${pic.defaultPath}`;
+        var webpPath = `${mediaDirPath}${pic.webpPath}`;
+        var picMeida = pic.media || ''; 
+
+
+      source(media= picMeida, srcset= webpPath, type="image/webp")
+      source(media= picMeida, srcset= defaultPath, type= pic.defaultType)
+
+    img(src= defaultPicPath, alt= options.defaultPic.alt, class= elementClasses)
+
+
+//- options = {
+//-   path: '',
+//-   tagClasses: '',
+//-   tagAlt: '',
+//- }
+
+mixin img(options= {})
+  -
+    var mediaDirPath = '../assets/media';
+    var picturePath = `${mediaDirPath}${options.path}`;
+    var tagClasses = options.tagClasses || '';
+    var tagAlt = options.tagAlt || '';
+
+  img(src= picturePath, alt= tagAlt, class= tagClasses)
