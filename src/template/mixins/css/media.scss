@@ -1,0 +1,19 @@
+@mixin media($point) {
+  @if $point == m {
+    @media (min-width: 834px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media (min-width: 3840px) {
+      @content;
+    }
+  }
+}

@@ -21,7 +21,7 @@
           ["@modules", "./src/template/modules"],
           ["@styleMixins", "./src/template/mixins/css"],
           ["@utils", "./src/template/utils"],
-          ["@api", "./src/template/api"]
+          ["@apiFront", "./src/template/api-front"]
         ]
       }
     }

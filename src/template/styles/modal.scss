@@ -1,0 +1,76 @@
+@import '@styleMixins/media.scss';
+@import '@styles/animations.scss';
+
+$modalOverlayBackground: rgba(0, 0, 0, 0.5);
+
+$modalContainerVerticalIndent_sm: 0px; 
+$modalContainerVerticalIndent_m: 20px;
+$modalContainerVerticalIndent_l: 60px;
+
+$modalDialogWidth_sm: 100%;
+$modalDialogWidth_m: 400px;
+$modalDialogWidth_l: 600px;
+
+$modalDialogHeight_sm: 100%;
+
+$modalDialogBackground: #fff;
+
+$modalShownAnimation: fadeIn 0.6s;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  display: none;
+
+  &__overlay {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    background-color: $modalOverlayBackground;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-height: calc(100% - #{$modalContainerVerticalIndent_sm} * 2);
+    padding: $modalContainerVerticalIndent_sm 0;
+    overflow: auto;
+
+    @include media(m) {
+      padding: $modalContainerVerticalIndent_m 0;
+      max-height: calc(100% - #{$modalContainerVerticalIndent_m} * 2);
+    }
+
+    @include media(l) {
+      padding: $modalContainerVerticalIndent_l 0;
+      max-height: calc(100% - #{$modalContainerVerticalIndent_l} * 2);
+    }
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 2;
+
+    width: $modalDialogWidth_sm;
+    height: $modalDialogHeight_sm;
+    background-color: $modalDialogBackground;
+
+    @include media(m) {
+      width: 500px;
+    }
+  }
+}
+
+.modal_shown {
+  display: block;
+  animation: $modalShownAnimation;
+}
