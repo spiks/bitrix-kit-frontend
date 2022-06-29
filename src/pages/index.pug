@@ -7,16 +7,3 @@ block title
   title Главная
 
 block body
-  form(action="")
-    .group
-      label(for="user-phone").label Телефон
-      input(type="tel" data-mask="+{7}(000)000-00-00" name="user-phone" id="user-phone").input
-    .group
-      label(for="user-name").label Имя
-      input(type="text" data-mask="name-lat" name="user-name" id="user-name").input
-    .group
-      label(for="user-number").label Число
-      input(type="text" data-mask="number" data-mask-min="10" data-mask-max="20" name="user-number" id="user-number").input
-    .group
-      label(for="user-date").label Дата
-      input(type="text" data-mask="date" data-mask-min="29.06.2022" data-mask-max="29.12.2022" name="user-date" id="user-date").input
