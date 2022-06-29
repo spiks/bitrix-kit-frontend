@@ -1,5 +1,5 @@
-import initModal from '@apiFront/modal/scripts.js';
+import initModules from '@apiFront/scripts.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const modalDefaultType = initModal();
+  initModules(['modal']);
 });

@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 
-class Modal {
+class ModalManager {
   static config = {
     openTrigger: 'data-modal-open',
     closeTrigger: 'data-modal-close',
@@ -9,11 +9,11 @@ class Modal {
     disableFocus: false,
   };
 
-  constructor(config = {}) {
+  constructor() {
     this.plugin = MicroModal;
     this.config = {
-      ...Modal.config,
-      ...config,
+      ...ModalManager.config,
+      // ...config,
     };
 
     this.plugin.init(this.config);
@@ -28,4 +28,4 @@ class Modal {
   }
 }
 
-export default Modal;
+export default ModalManager;
