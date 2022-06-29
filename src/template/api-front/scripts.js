@@ -1,11 +1,14 @@
 import ModalManager from '@modules/ModalManager/ModalManager.js';
+import MaskManager from '@modules/MaskManager/MaskManager';
 
 const modulesVarsMap = {
   modal: () => 'spiksModalManager',
+  mask: () => 'spiksMaskManager',
 };
 
 const modulesMap = {
   modal: () => new ModalManager(),
+  mask: () => new MaskManager(),
 };
 
 const initModules = (modulesNamesList = []) => {

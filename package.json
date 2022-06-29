@@ -51,9 +51,10 @@
     "webpack-dev-server": "^4.5.0"
   },
   "dependencies": {
-    "cleave.js": "^1.6.0",
+    "imask": "^6.4.2",
     "lodash": "^4.17.21",
     "micromodal": "^0.4.10",
+    "moment": "^2.29.3",
     "normalize.css": "^8.0.1"
   }
 }
