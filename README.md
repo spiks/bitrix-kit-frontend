@@ -15,6 +15,7 @@
 `$ npm run build`
 
 ## Установленные по умолчанию зависимости
+- delegated-events
 - lodash
 - normalize.css
 
