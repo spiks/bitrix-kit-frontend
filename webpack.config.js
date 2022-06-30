@@ -8,7 +8,7 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'local/templates/main'),
+  dist: path.join(__dirname, 'dist'),
   assets: 'assets',
 }
 
@@ -19,14 +19,8 @@ const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development
 const initMultipleHtmlPlugin = () => {
   const pages = fs.readdirSync(PAGES_DIR);
 
-  const pagesMap = {}
-
   const pluginInstances = pages.map((page) => {
     const [pageName] = page.split('.');
-
-    if (!pagesMap[pageName]) {
-      pagesMap[pageName] = `${pageName}.html`;
-    }
 
     return new HtmlWebpackPlugin({
       filename: `${pageName}.html`,
@@ -41,11 +35,11 @@ const initMultipleHtmlPlugin = () => {
 const config = {
   target: 'browserslist',
   entry: {
-    'template.styles': `${PATHS.src}/styles.js`,
-    'template.scripts': `${PATHS.src}/scripts.js`,
+    'main_styles': `${PATHS.src}/styles.js`,
+    'main_scripts': `${PATHS.src}/scripts.js`,
   },
   output: {
-    filename: `${PATHS.assets}/js/[name]/[name].js`,
+    filename: `js/[name]/[name].js`,
     path: PATHS.dist,
     clean: true,
   },
@@ -60,13 +54,11 @@ const config = {
   resolve: {
     alias: {
       '@': PATHS.src,
-      '@template': `${PATHS.src}/template`,
-      '@styles': `${PATHS.src}/template/styles`,
-      '@modules': `${PATHS.src}/template/modules`,
-      '@styleMixins': `${PATHS.src}/template/mixins/css`,
-      '@utils': `${PATHS.src}/template/utils`,
-      '@apiFront': `${PATHS.src}/template/api-front`,
-      '@components': `${PATHS.src}/template/components`,
+      '@assets-fonts': `${PATHS.src}/assets/fonts`,
+      '@assets-media': `${PATHS.src}/assets/media`,
+      '@styles': `${PATHS.src}/styles`,
+      '@styles-mixins': `${PATHS.src}/styles/mixins`,
+      '@components': `${PATHS.src}/components`,
     }
   },
   plugins: [    
@@ -75,17 +67,17 @@ const config = {
     new HtmlBeautifierPlugin(),
 
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name]/[name].css`,
+      filename: `css/[name]/[name].css`,
     }),
 
     new RemovePlugin({
       after: {
-        root: './local/templates/main/assets',
+        root: './dist',
         test: [
           {
             folder: './js',
             method: (absoluteItemPath) => {
-                return new RegExp(/\.styles/, 'm').test(absoluteItemPath);
+              return new RegExp(/styles/, 'gim').test(absoluteItemPath);
             }
           },
         ]

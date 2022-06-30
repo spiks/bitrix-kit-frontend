@@ -1,0 +1,24 @@
+//- options = {
+//-   sources: [
+//-     {
+//-       src: '',
+//-       type: '',
+//-     }
+//-   ]
+//-   attrs: '',
+//- }
+
+mixin audio(options= {})
+  -
+    var root = '../assets/media';
+    var attrs = options.attrs || '';
+
+  audio(attrs)
+    each source in options.sources
+      -
+        var src = `${root}/${options.src}`;
+        var type = source.type || '';
+      
+      source(src= src, type= type)
+    
+    | Your browser does not support the video tag.

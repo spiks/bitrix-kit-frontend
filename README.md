@@ -14,28 +14,34 @@
 Собрать фронт  
 `$ npm run build`
 
-## Алиасы
-- @ = "./src"
-- @template = "./src/template"
-- @apiFront = "./src/template/api-front"
-- @styles = "./src/template/styles"
-- @modules = "./src/template/modules"
-- @utils = "./src/template/utils"
-- @components = "./src/template/components"
+## Установленные по умолчанию зависимости
+- lodash
+- normalize.css
 
-## Структура src
-- assets
-    - fonts = файлы шрифтов
-    - media = файлы картинок
-- pages = файлы страниц
-- template
-    - api-front = файлы фронт-модулей для битрикса (инициализируются в глобальной области видимости)
-    - styles = файлы часто используемых стилей и переменныы
-    - modules = файлы глобальных скриптов (конструктор модалок, слайдеров, табов и т.п)
-    - layouts = файлы паг-шаблонов
-    - meta = файлы мета-элементов (хедер, футер)
-    - mixins 
-        - pug = файлы паг-миксинов
-        - css = файлы sass-миксинов
-    - utils = файлы вспомогательных скриптов
-    - components = файлы компонетов
+## Алиасы
+- @ - src
+- @assets-fonts - src/assets/fonts
+- @assets-media - src/assets/media
+- @styles - src/styles
+- @styles-mixins - src/styles/mixins
+- @components - src/components
+
+## Структура
+- assets/
+    - fonts/
+    - media/
+- pages/
+- styles/
+    - mixins/
+    - vars.scss
+    - fonts.scss
+    - layout.scss
+    - animations.scss
+    - icons.scss
+- layouts/
+    - mixins/
+    - main.pug
+- components/
+- init.js 
+- scripts.js
+- styles.js

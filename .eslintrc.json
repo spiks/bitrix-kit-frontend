@@ -15,13 +15,11 @@
       "alias": {
         "map": [
           ["@", "./src"],
-          ["@template", "./src/template"],
-          ["@components", "./src/template/components"],
-          ["@styles", "./src/template/styles"],
-          ["@modules", "./src/template/modules"],
-          ["@styleMixins", "./src/template/mixins/css"],
-          ["@utils", "./src/template/utils"],
-          ["@apiFront", "./src/template/api-front"]
+          ["@components", "./src/components"],
+          ["@styles", "./src/styles"],
+          ["@styles-mixins", "./src/styles/mixins"],
+          ["@assets-fonts", "./src/assets/fonts"],
+          ["@assets-media", "./src/assets/media"]
         ]
       }
     }
@@ -30,10 +28,7 @@
     "no-console": 0,
     "import/extensions": [
       "error",
-      "ignorePackages",
-      {
-        "js": "always"
-      }
+      "ignorePackages"
     ],
     "linebreak-style": 0,
     "no-new": 0

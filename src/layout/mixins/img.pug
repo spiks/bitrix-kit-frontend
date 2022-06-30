@@ -1,0 +1,14 @@
+//- options = {
+//-   src: '',
+//-   alt: '',
+//-   classes: '',
+//- }
+
+mixin img(options= {})
+  -
+    var root = '../assets/media';
+    var src = `${root}/${options.src}`;
+    var classes = options.classes || '';
+    var alt = options.alt || '';
+
+  img(src= src, alt= alt, class= classes, loading="lazy")

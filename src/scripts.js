@@ -1,5 +1,3 @@
-import initModules from '@apiFront/scripts.js';
+import { initTemplate } from '@/init.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initModules(['modal', 'mask']);
-});
+document.addEventListener('DOMContentLoaded', initTemplate);
