@@ -109,7 +109,7 @@ const config = {
         ],
       },
       {
-        test: /\.(svg|png|jpg|gif|webp)$/i,
+        test: /\.(svg|png|jpg|gif|mp4|webp)$/i,
         type: 'asset/resource',
         generator: {
           filename: `${PATHS.assets}/media/[name][ext]`,
