@@ -9,10 +9,22 @@
 `$ npm ci`
 
 Запустить фронт в режиме разработки (http://localhost:8080)  
-`$ npm run dev`
+`$ npm run bundler:dev`
  
 Собрать фронт  
-`$ npm run build`
+`$ npm run bundler:build`
+
+Проверить стили линтером  
+`$ npm run lint:styles`
+
+Проверить скрипты линтером  
+`$ npm run lint:scripts`
+
+Пофиксить стили линтером
+`$ npm run fix:styles`
+
+Пофиксить скрипты линтером  
+`$ npm run fix:scripts`
 
 ## Установленные по умолчанию зависимости
 - delegated-events
@@ -43,6 +55,11 @@
     - mixins/
     - main.pug
 - components/
+    - header/
+        - template.pug
+        - styles.scss
+        - scripts.js
+    - ...
 - init.js 
 - scripts.js
 - styles.js
