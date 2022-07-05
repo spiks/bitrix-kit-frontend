@@ -1,19 +1,25 @@
-@import '@styles/vars.scss';
+@import "@styles/vars.scss";
 
 @mixin media($point) {
   @if $point == from_m {
     @media only screen and (min-width: $firstWidth_pad) {
       @content;
     }
-  } @else if $point == from-l {
+  }
+
+  @else if $point == from-l {
     @media only screen and (min-width: $firstWidth_desktop) {
       @content;
     }
-  } @else if $point == from-xl {
+  }
+
+  @else if $point == from-xl {
     @media only screen and (min-width: $firstWidth_desktop-large) {
       @content;
     }
-  } @else if $point == from-xxl {
+  }
+
+  @else if $point == from-xxl {
     @media only screen and (min-width: $firstWidth_desktop-extra-large) {
       @content;
     }
