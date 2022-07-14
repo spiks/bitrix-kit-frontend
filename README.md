@@ -27,6 +27,7 @@
 `$ npm run fix:scripts`
 
 ## Установленные по умолчанию зависимости
+- inputmask
 - delegated-events
 - lodash
 - normalize.css
