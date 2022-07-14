@@ -10,7 +10,7 @@
 
 Запустить фронт в режиме разработки  
 `$ npm run bundler:dev`
- 
+
 Собрать фронт  
 `$ npm run bundler:build`
 
