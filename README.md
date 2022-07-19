@@ -58,6 +58,7 @@
     - mixins/
     - main.pug
 - components/
+- init.js
 - scripts.js
 - styles.js
 
