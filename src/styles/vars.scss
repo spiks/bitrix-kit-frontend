@@ -1,9 +1,15 @@
+// COLORS
+$bg_main: #fff;
+$text_main: #010101;
+
+// DOCUMENT
 $defaultFontFamily : Arial, sans-serif;
 $defaultFontSize : 16px;
 $defaultLineHeight : 140%;
-$defaultTextColor : #010101;
-$defaultBackgroundColor : #fff;
+$defaultTextColor : $bg_main;
+$defaultBackgroundColor : $text_main;
 
+// BREAKPOINTS
 $firstWidth_pad : 768px;
 $firstWidth_desktop : 1440px;
 $firstWidth_desktop-large : 1920px;
