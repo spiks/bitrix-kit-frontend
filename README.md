@@ -56,11 +56,10 @@
     - mixins/
     - main.pug
 - components/
-    - header/
-        - template.pug
-        - styles.scss
-        - scripts.js
-    - ...
-- init.js 
 - scripts.js
 - styles.js
+
+## Примечания
+- Подключать scss-файлы в файле /src/styles.js
+- Подключать js-модули в файле /src/init.js (требуется для разделения стадий инициализации и исполнения)
+- Подключать локальные файлы в шаблонах, используя путь относительно папки pages/
