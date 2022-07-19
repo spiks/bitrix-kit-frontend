@@ -125,9 +125,6 @@ const config = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
-        options: {
-          attrs: ['source:srcset', 'img:src']
-        },
       },
       {
         test: /\.pug$/i,
