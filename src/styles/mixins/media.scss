@@ -7,19 +7,19 @@
     }
   }
 
-  @else if $point == from-l {
+  @else if $point == from_l {
     @media only screen and (min-width: $firstWidth_desktop) {
       @content;
     }
   }
 
-  @else if $point == from-xl {
+  @else if $point == from_xl {
     @media only screen and (min-width: $firstWidth_desktop-large) {
       @content;
     }
   }
 
-  @else if $point == from-xxl {
+  @else if $point == from_xxl {
     @media only screen and (min-width: $firstWidth_desktop-extra-large) {
       @content;
     }
