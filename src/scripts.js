@@ -1,3 +1,3 @@
-import { initTemplate } from '@/init.js';
+import init from '@/init.js';
 
-document.addEventListener('DOMContentLoaded', initTemplate);
+init();
