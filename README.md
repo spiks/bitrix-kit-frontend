@@ -48,6 +48,8 @@
 - styles/
     - mixins/
     - vars.scss
+    - sitemap.scss
+    - tech.scss
     - fonts.scss
     - layout.scss
     - animations.scss
