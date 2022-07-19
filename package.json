@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "kit:remove-root-rep": "rm -r .git",
+    "kit:remove-root-rep": "npx rimraf .git",
     "kit:init-project-rep": "git init",
     "kit:install-packages": "npm ci",
     "kit:init": "npm run kit:remove-root-rep && npm run kit:init-project-rep && npm run kit:install-packages",
@@ -51,6 +51,7 @@
     "postcss-loader": "^6.2.0",
     "pug-html-loader": "^1.1.5",
     "remove-files-webpack-plugin": "^1.5.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
