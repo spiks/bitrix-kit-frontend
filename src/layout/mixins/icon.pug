@@ -1,0 +1,15 @@
+//- options = {
+//-   size: '',
+//-   ... add other modifications
+//-   mix: '',
+//-   symbolId: '',
+//- }
+
+mixin icon(options = {})
+  -
+    var classes = 'icon';
+        classes += options.mix ? ` ${options.mix}`: '';
+        classes += options.size ? ` ${options.size}` : '';
+
+  svg(class= classes)
+    use(xlink:href= symbolId)
