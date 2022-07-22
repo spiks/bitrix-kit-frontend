@@ -28,7 +28,7 @@
 
 ## Установленные по умолчанию зависимости
 - inputmask
-- delegated-events
+- delegate-it
 - lodash
 - normalize.css
 
