@@ -66,6 +66,7 @@
     "delegated-events": "^1.1.2",
     "inputmask": "^5.0.7",
     "lodash": "^4.17.21",
+    "lozad": "^1.16.0",
     "normalize.css": "^8.0.1"
   }
 }

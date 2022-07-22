@@ -27,6 +27,7 @@
 `$ npm run fix:scripts`
 
 ## Установленные по умолчанию зависимости
+- lozad
 - inputmask
 - delegated-events
 - delegate-it
