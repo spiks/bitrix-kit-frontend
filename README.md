@@ -27,6 +27,7 @@
 `$ npm run fix:scripts`
 
 ## Установленные по умолчанию зависимости
+- swiper
 - lozad
 - inputmask
 - delegated-events
