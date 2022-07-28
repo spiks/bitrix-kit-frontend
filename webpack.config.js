@@ -134,6 +134,7 @@ const config = {
             options: {
               sources: {
                 list: [
+                  "...",
                   {
                     tag: 'img',
                     attribute: 'data-src',
