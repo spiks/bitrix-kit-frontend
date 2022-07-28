@@ -130,7 +130,29 @@ const config = {
         test: /\.pug$/i,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'html-loader',
+            options: {
+              sources: {
+                list: [
+                  {
+                    tag: 'img',
+                    attribute: 'data-src',
+                    type: 'src',
+                  },
+                  {
+                    tag: 'img',
+                    attribute: "data-srcset",
+                    type: 'srcset',
+                  },
+                  {
+                    tag: 'div',
+                    attribute: 'data-background-image',
+                    type: 'src',
+                  },
+                ],
+              },
+              minimize: false,
+            },
           },
           {
             loader: 'pug-html-loader',
